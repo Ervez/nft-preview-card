@@ -4,9 +4,98 @@
 @VeryDarkBlueCardBG: hsl(216, 50%, 16%);
 @line: hsl(215, 32%, 27%);
 @white: hsl(0, 0%, 100%);
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
 
-body{color: white;
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    color: white;
     background-color: @VeryDarkblueBG;
-    .attribution { font-size: 11px; text-align: center; }
+    display: grid;
+    align-content: center;
+    height: 100vh;
+    font-family: 'Outfit', sans-serif;;
+    .containerMain{
+        display: flex;
+        margin: auto;
+        background-color: @VeryDarkBlueCardBG;
+        height: 650px;
+        width: 400px;
+        border-radius: 25px;
+        justify-content: center;
+        
+        .containerCard{
+            display: grid;
+            width: 80%;
+            justify-content: center;
+            height: fit-content;
+            .cardImg{
+                display: flex;
+                justify-content: center;
+                img{
+                    width: 350px;
+                    border-radius: 15px;
+                    margin-top: 25px;
+                }
+            }
+
+            .cardInfo{
+                margin-top: 15px;
+                flex-wrap:initial;
+                display: grid;
+                gap: 20px;
+                h1{
+                    font-size: 25px;
+                    letter-spacing: 2px;
+                }
+                p{
+                    color: @softBlue;
+                    font-size: 20px;
+                }
+                .infoExtended{
+                    display: flex;
+                    justify-content: space-between;
+
+                    .extendedGlobal{
+                        display: flex;
+                        height: 25px;
+                        img{
+                            height: 20px;
+                        }
+                    }
+                    .infoExtendedCount{
+                        display: flex;
+                        align-items: center;
+                        p{
+                            color: @Cyan;
+                            margin-left: 5px;
+                            font-weight: 600;
+                            font-size: 18px;
+                        }
+                    }
+
+                    .infoExtendedDays{
+                        p{
+                            color: @softBlue;
+                            margin-left: 5px;
+                            font-weight: 600;
+                            font-size: 18px; 
+                        }
+                    }
+                }
+
+                .infoCreatorMain{
+                    border-top: 1px solid @line;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    .attribution { font-size: 11px; text-align: center; margin-top: 50px; }
     .attribution a { color: hsl(228, 45%, 44%); }
 }
