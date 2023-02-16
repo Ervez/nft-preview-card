@@ -5,15 +5,16 @@
 @line: hsl(215, 32%, 27%);
 @white: hsl(0, 0%, 100%);
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
-@mobile:    ~"only screen and (min-width: 320px) and (max-width: 786px)";
-*{
+@mobile: ~"only screen and (max-width: 786px)";
+
+* {
     padding: 0;
     box-sizing: border-box;
     margin: 0;
     cursor: default;
 }
 
-body{
+body {
     color: white;
     background-color: @VeryDarkblueBG;
     display: grid;
@@ -21,11 +22,12 @@ body{
     height: 100vh;
     font-family: 'Outfit', sans-serif;
 
-    .hoverCyan:hover{
+    .hoverCyan:hover {
         color: @Cyan;
         cursor: pointer;
     }
-    .containerMain{
+
+    .containerMain {
         display: flex;
         margin: auto;
         background-color: @VeryDarkBlueCardBG;
@@ -33,26 +35,29 @@ body{
         width: 375px;
         border-radius: 25px;
         justify-content: center;
-        
-        .containerCard{
+
+        .containerCard {
             display: grid;
             width: 80%;
             justify-content: center;
             height: fit-content;
-            .cardImg{
+
+            .cardImg {
                 display: flex;
                 justify-content: center;
-                img{
+
+                img {
                     width: 325px;
                     border-radius: 15px;
                     margin-top: 25px;
+                    cursor: pointer;
                 }
 
-                img:hover + .cardImgHover{
+                img:hover+.cardImgHover {
                     display: flex;
                 }
 
-                .cardImgHover{
+                .cardImgHover {
                     position: absolute;
                     margin-top: 25px;
                     width: 325px;
@@ -63,42 +68,48 @@ body{
                     justify-content: center;
                     align-items: center;
 
-                    img{
+                    img {
                         height: 60px;
                         width: 60px;
                     }
                 }
             }
 
-            .cardInfo{
+            .cardInfo {
                 margin-top: 15px;
-                flex-wrap:initial;
+                flex-wrap: initial;
                 display: grid;
                 gap: 20px;
-                h1{
+
+                h1 {
                     margin-top: 10px;
                     font-size: 20px;
                     letter-spacing: 2px;
                 }
-                p{
+
+                p {
                     color: @softBlue;
                     font-size: 18px;
                 }
-                .infoExtended{
+
+                .infoExtended {
                     display: flex;
                     justify-content: space-between;
 
-                    .extendedGlobal{
+                    .extendedGlobal {
                         display: flex;
                         height: 25px;
-                        img{
+
+                        img {
                             height: 20px;
                         }
                     }
-                    .infoExtendedCount{
+
+                    .infoExtendedCount {
                         display: flex;
                         align-items: center;
-                        p{
+
+                        p {
                             color: @Cyan;
                             margin-left: 5px;
                             font-weight: 600;
@@ -106,38 +117,40 @@ body{
                         }
                     }
 
-                    .infoExtendedDays{
-                        p{
+                    .infoExtendedDays {
+                        p {
                             color: @softBlue;
                             margin-left: 5px;
-                            font-size: 18px; 
+                            font-size: 18px;
                         }
                     }
                 }
 
-                .infoCreatorMain{
+                .infoCreatorMain {
                     border-top: 1px solid @line;
                     margin-top: 10px;
 
-                    .creatorItems{
+                    .creatorItems {
                         margin-top: 25px;
                         display: flex;
                         align-items: center;
-                        img{
+
+                        img {
                             width: 35px;
                             border: 1px solid @white;
                             border-radius: 100%;
                         }
 
-                        p{
+                        p {
                             margin-left: 20px;
                             font-size: 18px;
+
                             strong {
                                 color: white;
                                 font-weight: normal;
                             }
 
-                            .hoverCyan:hover{
+                            .hoverCyan:hover {
                                 color: @Cyan;
                                 cursor: pointer;
                             }
@@ -148,6 +161,70 @@ body{
         }
     }
 
-    .attribution { font-size: 11px; text-align: center; margin-top: 50px; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+
+@media @mobile {
+    body {
+        .containerMain {
+            height: 540px;
+            width: 275px;
+
+            .containerCard {
+                .cardImg {
+                    img {
+                        width: 225px;
+                    }
+
+                    .cardImgHover {
+                        width: 225px;
+                        height: 225px;
+
+                        img {
+                            height: 60px;
+                            width: 60px;
+                        }
+                    }
+                }
+
+                .cardInfo {
+                    h1 {
+                        font-size: 18px;
+                    }
+
+                    .infoExtended {
+                        .infoExtendedCount {
+                            p {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .infoExtendedDays {
+                            p {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+
+                    .infoCreatorMain {
+                        .creatorItems {
+
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
